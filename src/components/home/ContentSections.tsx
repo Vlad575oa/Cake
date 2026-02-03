@@ -108,7 +108,7 @@ export function PurchaseSection({ product }: SectionProps) {
 
                     <button className="group relative px-12 py-6 bg-primary text-primary-foreground rounded-full font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl">
                         <span className="relative z-10 flex items-center gap-3">
-                            Order Your Nano <ShoppingCart className="w-5 h-5" />
+                            Order Your Cake <ShoppingCart className="w-5 h-5" />
                         </span>
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     </button>

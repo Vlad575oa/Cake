@@ -8,6 +8,7 @@ import { TextOverlays } from '@/components/home/TextOverlays';
 import { ProductSwitcher } from '@/components/ui/ProductSwitcher';
 import { HeroSection, InfoSection, PurchaseSection } from '@/components/home/ContentSections';
 import { Footer } from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar';
 
 export default function Home() {
   const [currentProduct, setCurrentProduct] = useState<Product>(PRODUCTS[0]);
@@ -28,6 +29,7 @@ export default function Home() {
 
   return (
     <main className={`relative min-h-screen ${currentProduct.themeClass} transition-colors duration-1000`}>
+      <Navbar />
       {/* Immersive Background Sequence */}
       <div
         ref={containerRef}

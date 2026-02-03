@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 export function Navbar() {
@@ -12,7 +12,6 @@ export function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        const previous = scrollY.getPrevious() ?? 0;
         if (latest > 50) {
             setIsScrolled(true);
         } else {
@@ -23,30 +22,27 @@ export function Navbar() {
     return (
         <header
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+                "fixed top-0 left-0 right-0 z-[60] transition-all duration-500",
                 isScrolled
-                    ? "bg-white/80 backdrop-blur-md shadow-sm py-4"
+                    ? "bg-black/20 backdrop-blur-premium py-4 border-b border-white/5"
                     : "bg-transparent py-6"
             )}
         >
-            <div className="container flex items-center justify-between">
+            <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="group flex items-center gap-2">
-                    <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded bg-black text-white transition-transform group-hover:scale-110">
-                        <span className="font-display font-bold">S</span>
-                    </div>
-                    <span className="font-display text-lg font-bold tracking-tight text-foreground">
-                        SAVA<span className="opacity-50">LINE</span>
+                    <span className="text-3xl font-black uppercase tracking-tighter text-white">
+                        Cake
                     </span>
                 </Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-10">
-                    {["Products", "Technical", "Projects", "About"].map((item) => (
+                    {["Collection", "Heritage", "Process", "Reviews"].map((item) => (
                         <Link
                             key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="text-sm font-bold uppercase tracking-widest text-foreground/60 hover:text-primary transition-colors"
+                            href={`#`}
+                            className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60 hover:text-primary transition-colors"
                         >
                             {item}
                         </Link>
@@ -54,36 +50,39 @@ export function Navbar() {
                 </nav>
 
                 {/* Actions */}
-                <div className="hidden md:flex items-center gap-4">
-                    <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary">
+                <div className="flex items-center gap-6">
+                    <button className="hidden md:block text-[10px] font-bold uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">
                         Contact
-                    </Link>
+                    </button>
                     <Link
-                        href="/catalog"
-                        className="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+                        href="#"
+                        className="group relative flex items-center gap-3 bg-primary px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
                     >
-                        Catalog
+                        <span className="relative z-10 flex items-center gap-2">
+                            Заказать <ShoppingCart className="w-4 h-4" />
+                        </span>
+                        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     </Link>
-                </div>
 
-                {/* Mobile Toggle */}
-                <button
-                    className="md:hidden text-foreground"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? <X /> : <Menu />}
-                </button>
+                    {/* Mobile Toggle */}
+                    <button
+                        className="md:hidden text-white p-2"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        {isMobileMenuOpen ? <X /> : <Menu />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="absolute top-full left-0 w-full bg-white border-b border-border p-6 md:hidden flex flex-col gap-6 animate-in slide-in-from-top-2 shadow-xl">
-                    <nav className="flex flex-col gap-4">
-                        {["Products", "Technical", "Projects", "About", "Contact"].map((item) => (
+                <div className="absolute top-full left-0 w-full bg-black/90 backdrop-blur-2xl border-b border-white/5 p-8 md:hidden flex flex-col gap-8 animate-in slide-in-from-top-4 shadow-2xl">
+                    <nav className="flex flex-col gap-6">
+                        {["Collection", "Heritage", "Process", "Reviews"].map((item) => (
                             <Link
                                 key={item}
                                 href={`#`}
-                                className="text-lg font-bold uppercase tracking-widest text-foreground hover:text-primary"
+                                className="text-lg font-bold uppercase tracking-widest text-white/80 hover:text-primary"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {item}
