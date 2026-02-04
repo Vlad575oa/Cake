@@ -13,8 +13,14 @@ export function TextOverlays({
     progress,
     product
 }: TextOverlaysProps) {
+    // Master opacity: fades out entirely as we reach the end of the scrollytelling (progress > 0.9)
+    const masterOpacity = useTransform(progress, [0.85, 0.95], [1, 0]);
+
     return (
-        <div className="fixed inset-0 pointer-events-none z-30">
+        <motion.div
+            style={{ opacity: masterOpacity }}
+            className="fixed inset-0 pointer-events-none z-30"
+        >
             {product.sections.map((section, index) => {
                 // Divide 0-1 into 4 ranges for the 4 sections
                 const start = index * 0.25;
@@ -43,15 +49,15 @@ export function TextOverlays({
                         style={{ opacity, y }}
                         className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
                     >
-                        <h2 className="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] leading-none mb-4">
+                        <h2 className="text-3xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] leading-none mb-4 max-w-4xl">
                             {section.title}
                         </h2>
-                        <p className="text-lg md:text-2xl font-light text-white/80 tracking-[0.2em] uppercase drop-shadow-md">
+                        <p className="text-sm md:text-2xl font-light text-white/80 tracking-[0.2em] uppercase drop-shadow-md">
                             {section.subtitle}
                         </p>
                     </motion.div>
                 );
             })}
-        </div>
+        </motion.div>
     );
 }

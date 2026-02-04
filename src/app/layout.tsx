@@ -12,42 +12,42 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://nano-banana.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://cake-lab.com'),
   title: {
-    default: 'Nano Banana | Premium Cake Collection',
-    template: '%s | Nano Banana',
+    default: 'Cake | Премиум Коллекция',
+    template: '%s | Cake',
   },
-  description: 'Experience the future of freshness with Nano Banana. Premium chocolate cakes crafted with precision and passion.',
+  description: 'Попробуйте будущее свежести с Cake. Премиальные торты, созданные с точностью и страстью.',
   keywords: [
-    'chocolate cakes',
-    'premium desserts',
-    'nano banana',
-    'luxury confectionery',
-    'artisanal cakes',
+    'торты',
+    'премиум десерты',
+    'cake',
+    'кондитерская',
+    'авторские торты',
   ],
-  authors: [{ name: 'Nano Banana' }],
-  creator: 'Nano Banana',
-  publisher: 'Nano Banana',
+  authors: [{ name: 'Cake' }],
+  creator: 'Cake',
+  publisher: 'Cake',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'ru_RU',
     url: '/',
-    siteName: 'Nano Banana',
-    title: 'Nano Banana | Future of Freshness',
-    description: 'Premium chocolate cakes crafted with precision and passion.',
+    siteName: 'Cake',
+    title: 'Cake | Будущее Свежести',
+    description: 'Премиальные торты, созданные с точностью и страстью.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Nano Banana | Premium Cakes',
+        alt: 'Cake | Премиум Десерты',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nano Banana | Future of Freshness',
-    description: 'Premium chocolate cakes crafted with precision and passion.',
+    title: 'Cake | Будущее Свежести',
+    description: 'Премиальные торты, созданные с точностью и страстью.',
     images: ['/og-image.jpg'],
   },
 }
@@ -58,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#000000" />

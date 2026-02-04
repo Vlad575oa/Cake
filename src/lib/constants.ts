@@ -10,70 +10,111 @@ export interface Product {
     themeClass: string;
     gradient: string;
     sections: ProductSection[];
+    label: string;
     description: string;
     specs: {
-        weight: string;
-        shelfLife: string;
-        calories: string;
+        label1: string;
+        value1: string;
+        label2: string;
+        value2: string;
+        label3: string;
+        value3: string;
+    };
+    scroller: {
+        imageDir: string;
+        startFrame: number;
+        endFrame: number;
+        extension: string;
+        filenamePrefix?: string;
+        zeroPadding?: number;
     };
 }
 
 export const PRODUCTS: Product[] = [
     {
-        id: 'dark-cake',
-        name: 'Dark Cake',
-        price: '$45',
-        themeClass: 'theme-dark-chocolate',
-        gradient: 'linear-gradient(135deg, #1a1512 0%, #3d2b1f 100%)',
+        id: 'triple-chocolate',
+        name: 'Три Шоколада',
+        label: 'Трио',
+        price: '5200₽',
+        themeClass: 'theme-chocolate',
+        gradient: 'linear-gradient(135deg, #8D6E63 0%, #3E2723 100%)',
         sections: [
-            { title: 'Pure Intensity', subtitle: '70% Cocoa Precision' },
-            { title: 'Velvet Texture', subtitle: 'Sculpted for the Palate' },
-            { title: 'Rich Legacy', subtitle: 'The Future of Dark Chocolate' },
-            { title: 'Dark Cake', subtitle: 'The Apex of Freshness' },
+            { title: 'Белый Вельвет', subtitle: 'Швейцарский Белый' },
+            { title: 'Молочная Нежность', subtitle: 'Бельгийский Молочный' },
+            { title: 'Темная Страсть', subtitle: 'Эквадорский 70%' },
         ],
-        description: 'A deep, immersive journey into the heart of Ecuadorian cocoa. Crafted with surgical precision for a flavor profile that is both complex and clean.',
+        description: 'Архитектурный шедевр для истинных гедонистов. Три слоя мусса из премиального шоколада разной интенсивности создают идеальный градиент вкуса. От нежной сливочной ноты до глубокого, терпкого финала.',
         specs: {
-            weight: '800g',
-            shelfLife: '72 Hours',
-            calories: '320 kcal / 100g',
+            label1: 'Какао',
+            value1: '3 Сорта',
+            label2: 'Слои',
+            value2: 'Идеал',
+            label3: 'Зависимость',
+            value3: '100%',
+        },
+        scroller: {
+            imageDir: '/chocolate/',
+            startFrame: 18,
+            endFrame: 192,
+            extension: '.jpg',
         },
     },
     {
-        id: 'milk-cake',
-        name: 'Milk Cake',
-        price: '$42',
-        themeClass: 'theme-milk-chocolate',
-        gradient: 'linear-gradient(135deg, #2b1f1a 0%, #5d4037 100%)',
+        id: 'exotic-fruit',
+        name: 'Фруктовая Эйфория',
+        label: 'Эйфория',
+        price: '4600₽',
+        themeClass: 'theme-mango',
+        gradient: 'linear-gradient(135deg, #FFB74D 0%, #F57C00 100%)',
         sections: [
-            { title: 'Silken Harmony', subtitle: 'Alpine Milk Fusion' },
-            { title: 'Golden Hue', subtitle: 'Captured at Perfection' },
-            { title: 'Smooth Flow', subtitle: 'Redefining the Classic' },
-            { title: 'Milk Cake', subtitle: 'Elegance in Every Bite' },
+            { title: 'Тропический Шторм', subtitle: 'Манго и Маракуйя' },
+            { title: 'Ягодный Бриз', subtitle: 'Малина и Клубника' },
+            { title: 'Невесомость', subtitle: 'Ванильный Шифон' },
         ],
-        description: 'The perfect equilibrium between rich cocoa and creamy Alpine milk. A smoother, more approachable take on our signature nano-structure.',
+        description: 'Симфония свежести, где каждый кусочек — это путешествие. Сочное конфи из отборного манго и маракуйи встречается с дерзкой кислинкой свежих ягод. Всё это окутано облаком легчайшего сливочного крема на ванильном бисквите.',
         specs: {
-            weight: '850g',
-            shelfLife: '48 Hours',
-            calories: '350 kcal / 100g',
+            label1: 'Фрукты',
+            value1: '7 Видов',
+            label2: 'Текстура',
+            value2: 'Шелк',
+            label3: 'Свежесть',
+            value3: '24/7',
+        },
+        scroller: {
+            imageDir: '/fruit/',
+            startFrame: 1,
+            endFrame: 61,
+            extension: '.webp',
         },
     },
     {
-        id: 'white-cake',
-        name: 'White Cake',
-        price: '$48',
-        themeClass: 'theme-white-chocolate',
-        gradient: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)',
+        id: 'red-velvet',
+        name: 'Красный Бархат',
+        label: 'Бархат',
+        price: '4900₽',
+        themeClass: 'theme-pomegranate',
+        gradient: 'linear-gradient(135deg, #E57373 0%, #B71C1C 100%)',
         sections: [
-            { title: 'Ivory Purity', subtitle: 'Natural Cocoa Butter' },
-            { title: 'Vanilla Cloud', subtitle: 'Infused with Madagascar' },
-            { title: 'Clean Finish', subtitle: 'Lighter than Air' },
-            { title: 'White Cake', subtitle: 'Sublime Refinement' },
+            { title: 'Королевский Алый', subtitle: 'Плотный Бисквит' },
+            { title: 'Сливочный Шелк', subtitle: 'Крем-Чиз Филадельфия' },
+            { title: 'Скрытая Нота', subtitle: 'Тонкий Вкус Какао' },
         ],
-        description: 'An ethereal experience of pure cocoa butter and premium vanilla. Light, airy, and undeniably sophisticated.',
+        description: 'Икона кондитерского искусства в современной интерпретации. Узнаваемый влажный бисквит с тонким шоколадным послевкусием, прослоенный легендарным кремом на основе сыра Филадельфия. Классика, доведенная до абсолюта.',
         specs: {
-            weight: '750g',
-            shelfLife: '48 Hours',
-            calories: '380 kcal / 100g',
+            label1: 'Сыр',
+            value1: 'Premium',
+            label2: 'Цвет',
+            value2: 'Passion',
+            label3: 'Статус',
+            value3: 'Icon',
+        },
+        scroller: {
+            imageDir: '/red/',
+            startFrame: 1,
+            endFrame: 97,
+            extension: '.jpg',
+            filenamePrefix: 'ezgif-frame-',
+            zeroPadding: 3,
         },
     },
 ];
