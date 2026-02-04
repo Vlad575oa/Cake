@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
             imageDir: '/chocolate/',
             startFrame: 18,
             endFrame: 192,
-            extension: '.jpg',
+            extension: '.webp',
         },
     },
     {
@@ -112,9 +112,9 @@ export const PRODUCTS: Product[] = [
             imageDir: '/red/',
             startFrame: 1,
             endFrame: 97,
-            extension: '.jpg',
-            filenamePrefix: 'ezgif-frame-',
-            zeroPadding: 3,
+            extension: '.webp',
+            filenamePrefix: '',
+            zeroPadding: 0,
         },
     },
 ];

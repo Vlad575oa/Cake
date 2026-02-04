@@ -77,7 +77,7 @@ export default function CollectionPage() {
                                 <span className="text-2xl font-bold">{PRODUCTS[1].price}</span>
                             </div>
                         </div>
-                        <div className="absolute inset-0 bg-[url('/chocolate/18.jpg')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
+                        <div className="absolute inset-0 bg-[url('/chocolate/18.webp')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
                     </motion.div>
 
                     {/* Wide Item (Pomegranate) - Spans 2 cols */}
@@ -104,7 +104,7 @@ export default function CollectionPage() {
                                 <span className="text-2xl font-bold">{PRODUCTS[2].price}</span>
                             </div>
                         </div>
-                        <div className="absolute inset-0 bg-[url('/red/ezgif-frame-001.jpg')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
+                        <div className="absolute inset-0 bg-[url('/red/1.webp')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
                     </motion.div>
 
                     {/* Feature Cell - Spans 1 col */}

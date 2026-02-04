@@ -64,10 +64,11 @@ export function Navbar() {
                 <div className="flex items-center gap-4 md:gap-6">
                     <Link
                         href="#"
-                        className="group relative flex items-center gap-3 bg-primary px-6 md:px-4 py-2.5 md:py-3 rounded-full text-[12px] font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
+                        className="group relative flex items-center gap-2 bg-primary px-4 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-[0.15em] text-white overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
                         style={{ transitionDuration: '600ms', transitionTimingFunction: 'ease-in-out' }}
                     >
                         <span className="relative z-10 flex items-center gap-2">
+                            <ShoppingCart className="w-4 h-4 sm:hidden" />
                             <span className="hidden sm:inline">Заказать</span>
                         </span>
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform" style={{ transitionDuration: '600ms', transitionTimingFunction: 'ease-in-out' }} />
